@@ -4,7 +4,7 @@ if [[ "$1" == "before-destroy" ]]; then
     printf "\033[0;36m================================================================================================================> Condition 1: Before destroy step \033[0m\n"
 
     printf "\033[0;32m============> Git checkout: New branch tf-destroy/$2-$5 \033[0m\n"
-    git checkout -b "tf-destroy/$2-$5 "
+    git checkout -b "tf-destroy/$2-$5"
     git config --local user.email "action@github.com"
     git config --local user.name "GitHub Action"
     cd $2/$3/$4/$5
