@@ -7,7 +7,7 @@ branding:
 
 inputs:
   TERRAFORM_DESTROY_STEP:
-    description: 'Tell to the action if it's a step before or after terraform destroy'
+    description: 'Tell to the action if it is a step before or after terraform destroy'
     required: true
   ENVIRONMENT:
     description: 'The GCP environment'
