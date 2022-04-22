@@ -23,7 +23,7 @@ if [[ "$1" == "before-destroy" ]]; then
 
     printf "\033[0;32m============> Open PR: tf_destroy_$2_$5 -> develop \033[0m\n"
     export GITHUB_TOKEN=$6
-    gh pr create --head release --base develop -t "[ Terraform destroy ]: Automatic PR opened by GitHub Actions"
+    gh pr create --head release --base develop -t "[ Terraform destroy ]: Automatic PR opened by GitHub Actions" --body "[ Terraform destroy ]: Automatic PR opened by GitHub Actions"
 
 elif [[ "$1" == "after-destroy" ]]; then
     echo "nothing..."
