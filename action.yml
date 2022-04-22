@@ -1,0 +1,37 @@
+name: GitHub actions Terraform destroy
+author: Gabriel Ferreira <gabriel.oliveira@platformbuilders.io>
+description: GitHub action used in Terraform destroy workflow
+branding:
+  icon: feather
+  color: gray-dark
+
+inputs:
+  TERRAFORM_DESTROY_STEP:
+    description: 'Tell to the action if it's a step before or after terraform destroy'
+    required: true
+  ENVIRONMENT:
+    description: 'The GCP environment'
+    required: true
+  REGION:
+    description: 'The GCP region'
+    required: true
+  SERVICE:
+    description: 'The GCP service'
+    required: true
+  RESOURCE:
+    description: 'The GCP resource name'
+    required: true
+  GITHUB_TOKEN:
+    description: 'The github token used to open PR'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.TERRAFORM_DESTROY_STEP }}
+    - ${{ inputs.ENVIRONMENT }}
+    - ${{ inputs.REGION }}
+    - ${{ inputs.SERVICE }}
+    - ${{ inputs.RESOURCE }}
+    - ${{ inputs.GITHUB_TOKEN }}
