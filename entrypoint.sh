@@ -25,5 +25,5 @@ if [[ "$1" == "before-destroy" ]]; then
     gh pr create --head release --base develop -t "[ Terraform destroy ]: Automatic PR opened by GitHub Actions"
 
 elif [[ "$1" == "after-destroy" ]]; then
-
+    echo "nothing..."
 fi
