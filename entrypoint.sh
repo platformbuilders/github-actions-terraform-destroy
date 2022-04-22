@@ -20,7 +20,7 @@ if [[ "$1" == "before-destroy" ]]; then
     printf "\033[0;32m============> Git push: Branch tf-destroy/$2-$5 \033[0m\n"
     git add -A .
     git commit -m "Destroy resource $5 in $2"
-    git push --set-upstream origin "tf-destroy/$2_$5"
+    git push --set-upstream origin "tf-destroy/$2-$5"
 
     printf "\033[0;32m============> Open PR: tf-destroy/$2-$5 -> develop \033[0m\n"
     export GITHUB_TOKEN=$6
